@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="flutter_starter" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+    <title>flutter_starter</title>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- To update web version (8.6.1) of firebase, keep an eye on that page -->
+    <!-- https://firebase.flutter.dev/docs/installation/web/ -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiUKRfzTt8ZEaY3n_r4dFoN7ab3I7-zzc",
+        authDomain: "test-1e9f4.firebaseapp.com",
+        databaseURL: "https://test-1e9f4.firebaseio.com",
+        projectId: "test-1e9f4",
+        storageBucket: "test-1e9f4.appspot.com",
+        messagingSenderId: "701705925235",
+        appId: "1:701705925235:web:5ac56ed16f4354660d3006",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      //https://github.com/flutter/flutter/issues/42880
+      //firebase.analytics()
+    </script>
+    <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("flutter_service_worker.js");
+        });
+      }
+    </script>
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
+</html>
