@@ -10,13 +10,6 @@ class HomeScreen extends StatelessWidget {
     return GetBuilder<AuthController>(
       init: AuthController(),
       builder: (controller) {
-        final profileInfo = [
-          "${'home.uidLabel'.tr}: ${controller.firestoreUser.value!.uid}",
-          "${'home.nameLabel'.tr}: ${controller.firestoreUser.value!.name}",
-          "${'home.emailLabel'.tr}: ${controller.firestoreUser.value!.email}",
-          "${'home.adminUserLabel'.tr}: ${controller.admin.value.toString()}",
-        ];
-
         return controller.firestoreUser.value!.uid == null
             ? Center(
                 child: CircularProgressIndicator(),
@@ -42,7 +35,12 @@ class HomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           FormVerticalSpace(),
-                          ...profileInfo.map((info) => Container(
+                          ...[
+                            "${'home.uidLabel'.tr}: ${controller.firestoreUser.value!.uid}",
+                            "${'home.nameLabel'.tr}: ${controller.firestoreUser.value!.name}",
+                            "${'home.emailLabel'.tr}: ${controller.firestoreUser.value!.email}",
+                            "${'home.adminUserLabel'.tr}: ${controller.admin.value.toString()}",
+                          ].map((info) => Container(
                                 margin: EdgeInsets.all(8.0),
                                 child:
                                     Text(info, style: TextStyle(fontSize: 20)),
