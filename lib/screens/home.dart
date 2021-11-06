@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          FormVerticalSpace(),
+                          VerticalSpace(),
                           ...[
                             "${'home.uidLabel'.tr}: ${controller.firestoreUser.value!.uid}",
                             "${'home.nameLabel'.tr}: ${controller.firestoreUser.value!.name}",

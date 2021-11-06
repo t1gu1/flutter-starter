@@ -40,7 +40,7 @@ class UpdateProfileScreen extends StatelessWidget {
                     onSaved: (value) =>
                         authController.nameController.text = value!,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   FormInputFieldWithIcon(
                     controller: authController.emailController,
                     iconPrefix: Icons.email,
@@ -51,7 +51,7 @@ class UpdateProfileScreen extends StatelessWidget {
                     onSaved: (value) =>
                         authController.emailController.text = value!,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.updateUser'.tr,
                       onPressed: () async {
@@ -68,7 +68,7 @@ class UpdateProfileScreen extends StatelessWidget {
                               authController.firestoreUser.value!.email);
                         }
                       }),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   LabelButton(
                     labelText: 'auth.resetPasswordLabelButton'.tr,
                     onPressed: () => Get.to(ResetPasswordScreen()),

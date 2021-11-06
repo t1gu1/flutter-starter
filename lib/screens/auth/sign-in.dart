@@ -36,7 +36,7 @@ class SignInScreen extends StatelessWidget {
                     onSaved: (value) =>
                         authController.emailController.text = value!,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   FormInputFieldWithIcon(
                     controller: authController.passwordController,
                     iconPrefix: Icons.lock,
@@ -48,7 +48,7 @@ class SignInScreen extends StatelessWidget {
                         authController.passwordController.text = value!,
                     maxLines: 1,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.signInButton'.tr,
                       onPressed: () async {
@@ -56,7 +56,7 @@ class SignInScreen extends StatelessWidget {
                           authController.signInWithEmailAndPassword(context);
                         }
                       }),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   LabelButton(
                     labelText: 'auth.resetPasswordLabelButton'.tr,
                     onPressed: () => Get.to(ResetPasswordScreen()),

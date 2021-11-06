@@ -33,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
                     onSaved: (value) =>
                         authController.nameController.text = value!,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   FormInputFieldWithIcon(
                     controller: authController.emailController,
                     iconPrefix: Icons.email,
@@ -44,7 +44,7 @@ class SignUpScreen extends StatelessWidget {
                     onSaved: (value) =>
                         authController.emailController.text = value!,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   FormInputFieldWithIcon(
                     controller: authController.passwordController,
                     iconPrefix: Icons.lock,
@@ -56,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
                         authController.passwordController.text = value!,
                     maxLines: 1,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.signUpButton'.tr,
                       onPressed: () async {
@@ -66,7 +66,7 @@ class SignUpScreen extends StatelessWidget {
                           authController.registerWithEmailAndPassword(context);
                         }
                       }),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   LabelButton(
                     labelText: 'auth.signInLabelButton'.tr,
                     onPressed: () => Get.to(SignInScreen()),

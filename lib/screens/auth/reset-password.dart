@@ -35,7 +35,7 @@ class ResetPasswordScreen extends StatelessWidget {
                     onSaved: (value) =>
                         authController.emailController.text = value as String,
                   ),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.resetPasswordButton'.tr,
                       onPressed: () async {
@@ -43,7 +43,7 @@ class ResetPasswordScreen extends StatelessWidget {
                           await authController.sendPasswordResetEmail(context);
                         }
                       }),
-                  FormVerticalSpace(),
+                  VerticalSpace(),
                   signInLink(context),
                 ],
               ),
