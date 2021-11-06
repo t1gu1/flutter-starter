@@ -1,5 +1,5 @@
 name: flutter_starter
-description: A new Flutter project.
+description: A Flutter starter project.
 
 version: 2.0.0
 
@@ -28,7 +28,6 @@ dependencies:
 
 dependency_overrides:
   # analyzer: 1.4.0
-  # intl: 0.17.0
 
 dev_dependencies:
 
