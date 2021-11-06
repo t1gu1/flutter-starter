@@ -11,8 +11,8 @@ import 'package:get_storage/get_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   await GetStorage.init();
+  await Firebase.initializeApp();
   Get.put<AuthController>(AuthController());
   Get.put<ThemeController>(ThemeController());
   Get.put<LanguageController>(LanguageController());
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             // FirebaseAnalyticsObserver(analytics: FirebaseAnalytics()),
           ],
           debugShowCheckedModeBanner: false,
-          //defaultTransition: Transition.fade,
+          defaultTransition: Transition.fade,
           theme: AppThemes.lightTheme,
           darkTheme: AppThemes.darkTheme,
           themeMode: ThemeMode.system,
