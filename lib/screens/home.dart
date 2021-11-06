@@ -35,27 +35,19 @@ class HomeScreen extends StatelessWidget {
                       children: <Widget>[
                         FormVerticalSpace(),
                         Text(
-                            'home.uidLabel'.tr +
-                                ': ' +
-                                controller.firestoreUser.value!.uid,
+                            "${'home.uidLabel'.tr}: ${controller.firestoreUser.value!.uid}",
                             style: TextStyle(fontSize: 16)),
                         FormVerticalSpace(),
                         Text(
-                            'home.nameLabel'.tr +
-                                ': ' +
-                                controller.firestoreUser.value!.name,
+                            "${'home.nameLabel'.tr}: ${controller.firestoreUser.value!.name}",
                             style: TextStyle(fontSize: 16)),
                         FormVerticalSpace(),
                         Text(
-                            'home.emailLabel'.tr +
-                                ': ' +
-                                controller.firestoreUser.value!.email,
+                            "${'home.emailLabel'.tr}: ${controller.firestoreUser.value!.email}",
                             style: TextStyle(fontSize: 16)),
                         FormVerticalSpace(),
                         Text(
-                            'home.adminUserLabel'.tr +
-                                ': ' +
-                                controller.admin.value.toString(),
+                            "${'home.adminUserLabel'.tr}: ${controller.admin.value.toString()}",
                             style: TextStyle(fontSize: 16)),
                       ],
                     ),
