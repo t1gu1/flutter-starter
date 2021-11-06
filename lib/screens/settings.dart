@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_starter/ui/auth/auth.dart';
+import 'package:flutter_starter/screens/auth/index.dart';
 import 'package:get/get.dart';
-import 'package:flutter_starter/ui/components/segmented_selector.dart';
-import 'package:flutter_starter/controllers/controllers.dart';
-import 'package:flutter_starter/ui/components/components.dart';
-import 'package:flutter_starter/models/models.dart';
-import 'package:flutter_starter/constants/constants.dart';
+import 'package:flutter_starter/components/segmented_selector.dart';
+import 'package:flutter_starter/controllers/index.dart';
+import 'package:flutter_starter/components/index.dart';
+import 'package:flutter_starter/models/index.dart';
+import 'package:flutter_starter/constants/index.dart';
 
-class SettingsUI extends StatelessWidget {
+class SettingsScreen extends StatelessWidget {
   //final LanguageController languageController = LanguageController.to;
   //final ThemeController themeController = ThemeController.to;
 
@@ -31,7 +31,7 @@ class SettingsUI extends StatelessWidget {
             title: Text('settings.updateProfile'.tr),
             trailing: ElevatedButton(
               onPressed: () async {
-                Get.to(UpdateProfileUI());
+                Get.to(UpdateProfileScreen());
               },
               child: Text(
                 'settings.updateProfile'.tr,

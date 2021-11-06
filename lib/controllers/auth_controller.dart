@@ -4,11 +4,11 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_starter/models/models.dart';
-import 'package:flutter_starter/ui/auth/auth.dart';
-import 'package:flutter_starter/ui/ui.dart';
-import 'package:flutter_starter/ui/components/components.dart';
-import 'package:flutter_starter/helpers/helpers.dart';
+import 'package:flutter_starter/models/index.dart';
+import 'package:flutter_starter/screens/auth/index.dart';
+import 'package:flutter_starter/screens/index.dart';
+import 'package:flutter_starter/components/index.dart';
+import 'package:flutter_starter/helpers/index.dart';
 
 class AuthController extends GetxController {
   static AuthController to = Get.find();
@@ -48,9 +48,9 @@ class AuthController extends GetxController {
 
     if (_firebaseUser == null) {
       print('Send to signin');
-      Get.offAll(SignInUI());
+      Get.offAll(SignInScreen());
     } else {
-      Get.offAll(HomeUI());
+      Get.offAll(HomeScreen());
     }
   }
 

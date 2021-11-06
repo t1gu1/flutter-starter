@@ -24,11 +24,11 @@ There are many other features of GetX to make things simpler, such as working wi
 
 When building an auth project there are a lot of the features you need for a production flutter project. I wanted light and dark mode theming but also the ability to detect and switch themes automatically. I needed the ability to switch between languages easily and automatically detect the user’s language. I wanted a simple way to handle translating from english (the only language I know unfortunately). This is accomplished by running a commandline app to generate the GetX Localization class which pulls from a [google sheet](https://docs.google.com/spreadsheets/d/1oS7iJ6ocrZBA53SxRfKF0CG9HAaXeKtzvsTBhgG4Zzk/edit#gid=0) and easily translate into other languages. Also I needed a way to [do simple user roles](https://medium.com/firebase-developers/patterns-for-security-with-firebase-group-based-permissions-for-cloud-firestore-72859cdec8f6) and it needed to be secure. I see a lot of auth packages including roles in the user’s collection in firestore which is usually editable by that same user. This would make it trivial for the user to assign himself admin privileges. I also wanted to show how to put some basic rules in firestore to secure it. Finally I wanted to have a way the user could alter their profile and change their email or password.
 
-To handle the language translation you need to create a translation for your app in google sheets.  Then open /helpers/update_localizations.dart and replace the docID and sheetId with your own documentId and sheetId.  After doing that your will need to drop to the command line and go into the helpers directory.  Then type: ```dart update_localizations.dart```.  This will create or overwrite the localization.g.dart file with your custom translation.  There should not be a need to edit this file directly.  Every time you make changes to your translation you will need to re-run this generator.
+To handle the language translation you need to create a translation for your app in google sheets. Then open /helpers/update_localizations.dart and replace the docID and sheetId with your own documentId and sheetId. After doing that your will need to drop to the command line and go into the helpers directory. Then type: `dart update_localizations.dart`. This will create or overwrite the localization.g.dart file with your custom translation. There should not be a need to edit this file directly. Every time you make changes to your translation you will need to re-run this generator.
 
 ![](https://cdn-images-1.medium.com/max/2000/0*9-A7El_nRDBz-ecK)
 
-You can copy my [sheet](https://docs.google.com/spreadsheets/d/1oS7iJ6ocrZBA53SxRfKF0CG9HAaXeKtzvsTBhgG4Zzk/edit#gid=0) as a starting point for your own app. The cool thing about using a google sheet is you can have google translate a field with a simple google formula: =GOOGLETRANSLATE(B4,en,fr) This says translate the phrase in field B4 from english to french. 
+You can copy my [sheet](https://docs.google.com/spreadsheets/d/1oS7iJ6ocrZBA53SxRfKF0CG9HAaXeKtzvsTBhgG4Zzk/edit#gid=0) as a starting point for your own app. The cool thing about using a google sheet is you can have google translate a field with a simple google formula: =GOOGLETRANSLATE(B4,en,fr) This says translate the phrase in field B4 from english to french.
 
 To handle user roles I created a separate admin collection and added a document with the same document id as the uid of my user. The reason to do this is to make it secure as explained in this [medium article](https://medium.com/firebase-developers/patterns-for-security-with-firebase-group-based-permissions-for-cloud-firestore-72859cdec8f6). I went with the second method explained in that article. If we had just put the roles as a field in the users collection any user could have upgraded themselves to an admin user. So by moving the admin role to a separate collection we can create some rules in firestore that allow the user to update fields about themselves without giving them access to change the role they were assigned. You can also generate other roles for the user by simply adding additional collections for the other roles..
 
@@ -45,8 +45,6 @@ Finally I wanted to explain a little bit about my ui. I try to control as much a
 ## Overview of project
 
 **main.dart** — contains info for maintaining the state of the app for the theme, language and user. It initializes language and theme settings. Sets up routing.
-
-
 
 ## /constants/
 
@@ -78,27 +76,27 @@ Finally I wanted to explain a little bit about my ui. I try to control as much a
 
 **menu_option_model.dart** — contains our model for our language options and theme options in settings.
 
-## /ui/
+## /screens/
 
-**home_ui.dart** — contains the ui for the home which shows info about the user.
+**home.dart** — contains the ui for the home which shows info about the user.
 
-**settings_ui.dart** — contains the settings screen for setting the theme and language and some user settings.
+**settings.dart** — contains the settings screen for setting the theme and language and some user settings.
 
-**splash_ui.dart** — contains the initial loading screen, currently just a circular progress indicator.
+**splash.dart** — contains the initial loading screen, currently just a circular progress indicator.
 
-## /ui/auth/
+## /screens/auth/
 
-**reset_password_ui.dart** — sends a password reset email to the user.
+**reset-password.dart** — sends a password reset email to the user.
 
-**sign_in_ui.dart** — allows user to login with email and password.
+**sign-in.dart** — allows user to login with email and password.
 
-**sign_up_ui.dart** — allows user to create a new account.
+**sign-up.dart** — allows user to create a new account.
 
-**update_profile_ui.dart** — allows user to change his email or name.
+**update-profile.dart** — allows user to change his email or name.
 
-## /ui/components/
+## /components/
 
-**avatar.dart** — displays a user avatar on the home_ui.
+**avatar.dart** — displays a user avatar on the home.
 
 **dropdown_picker.dart** — shows a dropdown list.
 

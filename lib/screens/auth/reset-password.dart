@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:flutter_starter/ui/auth/auth.dart';
-import 'package:flutter_starter/ui/components/components.dart';
-import 'package:flutter_starter/helpers/helpers.dart';
-import 'package:flutter_starter/controllers/controllers.dart';
+import 'package:flutter_starter/screens/auth/index.dart';
+import 'package:flutter_starter/components/index.dart';
+import 'package:flutter_starter/helpers/index.dart';
+import 'package:flutter_starter/controllers/index.dart';
 
-class ResetPasswordUI extends StatelessWidget {
+class ResetPasswordScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -65,7 +65,7 @@ class ResetPasswordUI extends StatelessWidget {
     if (authController.emailController.text == '') {
       return LabelButton(
         labelText: 'auth.signInonResetPasswordLabelButton'.tr,
-        onPressed: () => Get.offAll(SignInUI()),
+        onPressed: () => Get.offAll(SignInScreen()),
       );
     }
     return Container(width: 0, height: 0);

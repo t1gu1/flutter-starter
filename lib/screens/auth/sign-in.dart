@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:flutter_starter/ui/components/components.dart';
-import 'package:flutter_starter/helpers/helpers.dart';
-import 'package:flutter_starter/controllers/controllers.dart';
-import 'package:flutter_starter/ui/auth/auth.dart';
 
-class SignUpUI extends StatelessWidget {
+import 'dart:core';
+import 'package:get/get.dart';
+import 'package:flutter_starter/screens/auth/index.dart';
+import 'package:flutter_starter/components/index.dart';
+import 'package:flutter_starter/helpers/index.dart';
+import 'package:flutter_starter/controllers/index.dart';
+
+class SignInScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -24,16 +26,6 @@ class SignUpUI extends StatelessWidget {
                 children: <Widget>[
                   LogoGraphicHeader(),
                   SizedBox(height: 48.0),
-                  FormInputFieldWithIcon(
-                    controller: authController.nameController,
-                    iconPrefix: Icons.person,
-                    labelText: 'auth.nameFormField'.tr,
-                    validator: Validator().name,
-                    onChanged: (value) => null,
-                    onSaved: (value) =>
-                        authController.nameController.text = value!,
-                  ),
-                  FormVerticalSpace(),
                   FormInputFieldWithIcon(
                     controller: authController.emailController,
                     iconPrefix: Icons.email,
@@ -58,18 +50,20 @@ class SignUpUI extends StatelessWidget {
                   ),
                   FormVerticalSpace(),
                   PrimaryButton(
-                      labelText: 'auth.signUpButton'.tr,
+                      labelText: 'auth.signInButton'.tr,
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-                          SystemChannels.textInput.invokeMethod(
-                              'TextInput.hide'); //to hide the keyboard - if any
-                          authController.registerWithEmailAndPassword(context);
+                          authController.signInWithEmailAndPassword(context);
                         }
                       }),
                   FormVerticalSpace(),
                   LabelButton(
-                    labelText: 'auth.signInLabelButton'.tr,
-                    onPressed: () => Get.to(SignInUI()),
+                    labelText: 'auth.resetPasswordLabelButton'.tr,
+                    onPressed: () => Get.to(ResetPasswordScreen()),
+                  ),
+                  LabelButton(
+                    labelText: 'auth.signUpLabelButton'.tr,
+                    onPressed: () => Get.to(SignUpScreen()),
                   ),
                 ],
               ),

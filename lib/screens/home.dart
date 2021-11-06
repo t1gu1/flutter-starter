@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/controllers/controllers.dart';
-import 'package:flutter_starter/ui/components/components.dart';
-import 'package:flutter_starter/ui/ui.dart';
+import 'package:flutter_starter/controllers/index.dart';
+import 'package:flutter_starter/components/index.dart';
+import 'package:flutter_starter/screens/index.dart';
 import 'package:get/get.dart';
 
-class HomeUI extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AuthController>(
@@ -20,7 +20,7 @@ class HomeUI extends StatelessWidget {
                   IconButton(
                       icon: Icon(Icons.settings),
                       onPressed: () {
-                        Get.to(SettingsUI());
+                        Get.to(SettingsScreen());
                       }),
                 ],
               ),
