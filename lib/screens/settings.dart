@@ -77,6 +77,7 @@ class SettingsScreen extends StatelessWidget {
       MenuOptionsModel(
           key: "dark", value: 'settings.dark'.tr, icon: Icons.brightness_3)
     ];
+
     return GetBuilder<ThemeController>(
       builder: (controller) => ListTile(
         title: Text('settings.theme'.tr),
