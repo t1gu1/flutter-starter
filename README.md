@@ -6,14 +6,15 @@
 - `flutter devices` will show you your devices list.
 - `flutter run -d {device}` will run on the chosen device.
 - `flutter build {web | ios | android}` will build the app for the chosen platform.
+- `flutter run --release` will let you test an optimized build (Like the release).
 
-## Test web build
+## Run the web build on a server
 
 A small trick to test rapidly web **build** is to use [http-server](https://www.npmjs.com/package/http-server).
 
 - `npm install --global http-server` or `yarn global add http-server`
 - `cd build/web`
-- `http-server --proxy http://localhost:8080`
+- `http-server -b -g --proxy http://localhost:8080`
 - Go to <http://localhost:8080>
 
 ## Package used
