@@ -2,7 +2,7 @@
 
 ## Commons commands
 
-- `flutter run` will run the app on a device. (Chosen by the last available?)
+- `flutter run` will run the app on a device. (It will ask which devices if you got few)
 - `flutter devices` will show you your devices list.
 - `flutter run -d {device}` will run on the chosen device.
 - `flutter build {web | ios | android}` will build the app for the chosen platform.
