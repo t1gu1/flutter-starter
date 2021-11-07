@@ -1,16 +1,5 @@
 import 'package:flutter/material.dart';
-/*
-FormInputFieldWithIcon(
-                controller: _email,
-                iconPrefix: Icons.link,
-                labelText: 'Post URL',
-                validator: Validator.notEmpty,
-                keyboardType: TextInputType.multiline,
-                minLines: 3,
-                onChanged: (value) => print('changed'),
-                onSaved: (value) => print('implement me'),
-              ),
-*/
+import 'package:flutter_starter/constants/app_themes.dart';
 
 class FormInputFieldWithIcon extends StatelessWidget {
   FormInputFieldWithIcon(
@@ -21,6 +10,7 @@ class FormInputFieldWithIcon extends StatelessWidget {
       this.keyboardType = TextInputType.text,
       this.obscureText = false,
       this.minLines = 1,
+      this.maxWidth = AppThemes.inputWidth,
       this.maxLines,
       required this.onChanged,
       required this.onSaved});
@@ -33,25 +23,28 @@ class FormInputFieldWithIcon extends StatelessWidget {
   final bool obscureText;
   final int minLines;
   final int? maxLines;
+  final double maxWidth;
   final void Function(String) onChanged;
   final void Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        filled: true,
-        prefixIcon: Icon(iconPrefix),
-        labelText: labelText,
-      ),
-      controller: controller,
-      onSaved: onSaved,
-      onChanged: onChanged,
-      keyboardType: keyboardType,
-      obscureText: obscureText,
-      maxLines: maxLines,
-      minLines: minLines,
-      validator: validator,
-    );
+    return Container(
+        constraints: BoxConstraints(maxWidth: maxWidth),
+        child: TextFormField(
+          decoration: InputDecoration(
+            filled: true,
+            prefixIcon: Icon(iconPrefix),
+            labelText: labelText,
+          ),
+          controller: controller,
+          onSaved: onSaved,
+          onChanged: onChanged,
+          keyboardType: keyboardType,
+          obscureText: obscureText,
+          maxLines: maxLines,
+          minLines: minLines,
+          validator: validator,
+        ));
   }
 }

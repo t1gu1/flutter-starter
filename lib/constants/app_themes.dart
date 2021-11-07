@@ -6,6 +6,7 @@ class AppThemes {
   static const double sectionPadding = 25;
   static const double sectionWidth = 1024;
   static const double verticalSpace = 24;
+  static const double inputWidth = 320;
 
   static const Color dodgerBlue = Color.fromRGBO(29, 161, 242, 1);
   static const Color whiteLilac = Color.fromRGBO(248, 250, 252, 1);

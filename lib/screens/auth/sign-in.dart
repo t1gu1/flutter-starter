@@ -25,32 +25,28 @@ class SignInScreen extends StatelessWidget {
                 children: <Widget>[
                   LogoGraphicHeader(),
                   VerticalSpace(height: 48),
-                  Container(
-                      constraints: BoxConstraints(maxWidth: 320),
-                      child: FormInputFieldWithIcon(
-                        controller: authController.emailController,
-                        iconPrefix: Icons.email,
-                        labelText: 'auth.emailFormField'.tr,
-                        validator: Validator().email,
-                        keyboardType: TextInputType.emailAddress,
-                        onChanged: (value) => null,
-                        onSaved: (value) =>
-                            authController.emailController.text = value!,
-                      )),
+                  FormInputFieldWithIcon(
+                    controller: authController.emailController,
+                    iconPrefix: Icons.email,
+                    labelText: 'auth.emailFormField'.tr,
+                    validator: Validator().email,
+                    keyboardType: TextInputType.emailAddress,
+                    onChanged: (value) => null,
+                    onSaved: (value) =>
+                        authController.emailController.text = value!,
+                  ),
                   VerticalSpace(),
-                  Container(
-                      constraints: BoxConstraints(maxWidth: 320),
-                      child: FormInputFieldWithIcon(
-                        controller: authController.passwordController,
-                        iconPrefix: Icons.lock,
-                        labelText: 'auth.passwordFormField'.tr,
-                        validator: Validator().password,
-                        obscureText: true,
-                        onChanged: (value) => null,
-                        onSaved: (value) =>
-                            authController.passwordController.text = value!,
-                        maxLines: 1,
-                      )),
+                  FormInputFieldWithIcon(
+                    controller: authController.passwordController,
+                    iconPrefix: Icons.lock,
+                    labelText: 'auth.passwordFormField'.tr,
+                    validator: Validator().password,
+                    obscureText: true,
+                    onChanged: (value) => null,
+                    onSaved: (value) =>
+                        authController.passwordController.text = value!,
+                    maxLines: 1,
+                  ),
                   VerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.signInButton'.tr,
