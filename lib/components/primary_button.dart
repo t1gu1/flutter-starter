@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/constants/index.dart';
 
 /*
 PrimaryButton(
@@ -17,10 +18,14 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Text(
-        labelText.toUpperCase(),
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
+      child: Padding(
+          padding: EdgeInsets.symmetric(
+              vertical: AppThemes.buttonVerticalPadding,
+              horizontal: AppThemes.buttonHorizontalPadding),
+          child: Text(
+            labelText.toUpperCase(),
+            style: TextStyle(fontWeight: FontWeight.bold),
+          )),
     );
   }
 }

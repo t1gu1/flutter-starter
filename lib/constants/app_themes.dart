@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 class AppThemes {
   AppThemes._();
 
+  static const double buttonHorizontalPadding = 20;
+  static const double buttonVerticalPadding = 15;
+
   static const double sectionPadding = 25;
   static const double sectionWidth = 1024;
+
   static const double verticalSpace = 24;
+  
   static const double inputWidth = 320;
 
   static const Color dodgerBlue = Color.fromRGBO(29, 161, 242, 1);
