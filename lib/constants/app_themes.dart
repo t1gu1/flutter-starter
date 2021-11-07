@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+/** 
+ * If you adding some props for dark mode YOU HAVE TO add it for light mode too!
+ * Modified keys has to be the same otherwise flutter will tell you something about keys on theme change...
+*/
+
 class AppThemes {
   AppThemes._();
 
@@ -10,9 +15,11 @@ class AppThemes {
   static const double sectionWidth = 1024;
 
   static const double verticalSpace = 24;
-  
+
   static const double inputWidth = 320;
 
+  static const Color royalRed = Color.fromRGBO(230, 0, 0, 1);
+  static const Color royalRedDark = Color.fromRGBO(190, 0, 0, 1);
   static const Color dodgerBlue = Color.fromRGBO(29, 161, 242, 1);
   static const Color whiteLilac = Color.fromRGBO(248, 250, 252, 1);
   static const Color blackPearl = Color.fromRGBO(30, 31, 43, 1);
@@ -26,7 +33,7 @@ class AppThemes {
   static String font2 = "Roboto";
   //constants color range for light theme
   //main color
-  static const Color _lightPrimaryColor = dodgerBlue;
+  static const Color _lightPrimaryColor = royalRed;
 
   //Background Colors
   static const Color _lightBackgroundColor = whiteLilac;
@@ -54,7 +61,7 @@ class AppThemes {
   static const Color _lightBorderErrorColor = brinkPink;
 
   //constants color range for dark theme
-  static const Color _darkPrimaryColor = dodgerBlue;
+  static const Color _darkPrimaryColor = royalRedDark;
 
   //Background Colors
   static const Color _darkBackgroundColor = ebonyClay;
@@ -70,9 +77,9 @@ class AppThemes {
       Color.fromRGBO(186, 215, 97, 1);
 
   //Text Colors
-  static const Color _darkTextColor = Colors.white;
-  static const Color _darkAlertTextColor = Colors.black;
-  static const Color _darkTextSecondaryColor = Colors.black;
+  static const Color _darkTextColor = white;
+  static const Color _darkAlertTextColor = white;
+  static const Color _darkTextSecondaryColor = white;
 
   //Border Color
   static const Color _darkBorderColor = nevada;
@@ -81,7 +88,7 @@ class AppThemes {
   static const Color _darkIconColor = nevada;
 
   static const Color _darkInputFillColor = _darkBackgroundSecondaryColor;
-  static const Color _darkBorderActiveColor = _darkPrimaryColor;
+  static const Color _darkBorderActiveColor = white;
   static const Color _darkBorderErrorColor = brinkPink;
 
   //text theme for light theme
@@ -122,6 +129,12 @@ class AppThemes {
     ),
     popupMenuTheme: PopupMenuThemeData(color: _lightBackgroundAppBarColor),
     textTheme: _lightTextTheme,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+            primary: _lightPrimaryColor,
+            textStyle: TextStyle(
+              color: Colors.white,
+            ))),
     buttonTheme: ButtonThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
@@ -130,6 +143,7 @@ class AppThemes {
         textTheme: ButtonTextTheme.primary),
     unselectedWidgetColor: _lightPrimaryColor,
     inputDecorationTheme: InputDecorationTheme(
+      labelStyle: TextStyle(color: white),
       //prefixStyle: TextStyle(color: _lightIconColor),
       border: OutlineInputBorder(
           borderSide: BorderSide(width: 1.0),
@@ -172,13 +186,13 @@ class AppThemes {
       fontWeight: FontWeight.w100);*/
 
   static final TextTheme _darkTextTheme = TextTheme(
-    headline1: TextStyle(fontSize: 20.0, color: _darkTextColor),
-    bodyText1: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    bodyText2: TextStyle(fontSize: 14.0, color: Colors.grey),
-    button: TextStyle(
-        fontSize: 15.0, color: _darkTextColor, fontWeight: FontWeight.w600),
-    headline6: TextStyle(fontSize: 16.0, color: _darkTextColor),
-    subtitle1: TextStyle(fontSize: 16.0, color: _darkTextColor),
+    headline1: TextStyle(fontSize: 20.0, color: white),
+    bodyText1: TextStyle(fontSize: 16.0, color: white),
+    bodyText2: TextStyle(fontSize: 14.0, color: white),
+    button:
+        TextStyle(fontSize: 15.0, color: white, fontWeight: FontWeight.w600),
+    headline6: TextStyle(fontSize: 16.0, color: white),
+    subtitle1: TextStyle(fontSize: 16.0, color: white),
     caption: TextStyle(fontSize: 12.0, color: _darkBackgroundAppBarColor),
   );
 
@@ -199,7 +213,7 @@ class AppThemes {
       textTheme: _darkTextTheme,
     ),
     colorScheme: ColorScheme.dark(
-      primary: _darkPrimaryColor,
+      primary: white,
       primaryVariant: _darkBackgroundColor,
 
       // secondary: _darkSecondaryColor,
@@ -213,14 +227,30 @@ class AppThemes {
     ),
     popupMenuTheme: PopupMenuThemeData(color: _darkBackgroundAppBarColor),
     textTheme: _darkTextTheme,
+
+    // textButtonTheme: TextButtonThemeData(
+    //     style: TextButton.styleFrom(
+    //   textStyle: TextStyle(color: white),
+    // )),
+
     buttonTheme: ButtonThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
         buttonColor: _darkPrimaryColor,
         textTheme: ButtonTextTheme.primary),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+            primary: white,
+            textStyle: TextStyle(
+              color: Colors.white,
+            ))),
+
     unselectedWidgetColor: _darkPrimaryColor,
+
     inputDecorationTheme: InputDecorationTheme(
+      labelStyle: TextStyle(color: white),
       prefixStyle: TextStyle(color: _darkIconColor),
       //labelStyle: TextStyle(color: nevada),
       border: OutlineInputBorder(

@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/constants/index.dart';
 
-/*
-PrimaryButton(
-                labelText: 'UPDATE',
-                onPressed: () => print('Submit'),
-              ),
-*/
-
 class PrimaryButton extends StatelessWidget {
   PrimaryButton({required this.labelText, required this.onPressed});
 
