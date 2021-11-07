@@ -113,7 +113,7 @@ class AppThemes {
     ),
     appBarTheme: AppBarTheme(
       color: _lightBackgroundAppBarColor,
-      iconTheme: IconThemeData(color: _lightTextColor),
+      iconTheme: IconThemeData(color: white),
       textTheme: _lightTextTheme,
     ),
     colorScheme: ColorScheme.light(
@@ -143,7 +143,7 @@ class AppThemes {
         textTheme: ButtonTextTheme.primary),
     unselectedWidgetColor: _lightPrimaryColor,
     inputDecorationTheme: InputDecorationTheme(
-      labelStyle: TextStyle(color: white),
+      labelStyle: TextStyle(color: ebonyClay),
       //prefixStyle: TextStyle(color: _lightIconColor),
       border: OutlineInputBorder(
           borderSide: BorderSide(width: 1.0),
@@ -193,7 +193,7 @@ class AppThemes {
         TextStyle(fontSize: 15.0, color: white, fontWeight: FontWeight.w600),
     headline6: TextStyle(fontSize: 16.0, color: white),
     subtitle1: TextStyle(fontSize: 16.0, color: white),
-    caption: TextStyle(fontSize: 12.0, color: _darkBackgroundAppBarColor),
+    caption: TextStyle(fontSize: 12.0, color: white),
   );
 
   //the dark theme
@@ -242,7 +242,7 @@ class AppThemes {
 
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            primary: white,
+            primary: _darkPrimaryColor,
             textStyle: TextStyle(
               color: Colors.white,
             ))),
