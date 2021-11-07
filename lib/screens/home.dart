@@ -25,32 +25,34 @@ class HomeScreen extends StatelessWidget {
                         }),
                   ],
                 ),
-                body: Center(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height: 120),
-                      Avatar(controller.firestoreUser.value!),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          VerticalSpace(),
-                          ...[
-                            "${'home.uidLabel'.tr}: ${controller.firestoreUser.value!.uid}",
-                            "${'home.nameLabel'.tr}: ${controller.firestoreUser.value!.name}",
-                            "${'home.emailLabel'.tr}: ${controller.firestoreUser.value!.email}",
-                            "${'home.adminUserLabel'.tr}: ${controller.admin.value.toString()}",
-                          ].map((info) => Container(
-                                margin: EdgeInsets.all(8.0),
-                                child:
-                                    Text(info, style: TextStyle(fontSize: 20)),
-                              ))
-                        ],
-                      ),
-                    ],
+                body: Section(
+                  type: SectionType.fullWidthWithPadding,
+                  child: Center(
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(height: 120),
+                        Avatar(controller.firestoreUser.value!),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            VerticalSpace(),
+                            ...[
+                              "${'home.uidLabel'.tr}: ${controller.firestoreUser.value!.uid}",
+                              "${'home.nameLabel'.tr}: ${controller.firestoreUser.value!.name}",
+                              "${'home.emailLabel'.tr}: ${controller.firestoreUser.value!.email}",
+                              "${'home.adminUserLabel'.tr}: ${controller.admin.value.toString()}",
+                            ].map((info) => Container(
+                                  margin: EdgeInsets.all(8.0),
+                                  child: Text(info,
+                                      style: TextStyle(fontSize: 20)),
+                                ))
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              );
+                ));
       },
     );
   }
