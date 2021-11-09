@@ -29,8 +29,6 @@ class Section extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(type);
-
     return Container(
         constraints: BoxConstraints(maxWidth: maxWidth),
         child: Padding(

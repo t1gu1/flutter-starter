@@ -144,18 +144,14 @@ class AuthController extends GetxController {
     try {
       showLoadingIndicator();
       try {
-        await _auth
-            .signInWithEmailAndPassword(email: oldEmail, password: password)
-            .then((_firebaseUser) {
-          _firebaseUser.user!
-              .updateEmail(user.email)
-              .then((value) => _updateUserFirestore(user, _firebaseUser.user!));
-        });
-      } catch (err) {
-        print('Caught error: $err');
-        //not yet working, see this issue https://github.com/delay/flutter_starter/issues/21
-        if (err ==
-            "Error: [firebase_auth/email-already-in-use] The email address is already in use by another account.") {
+        UserCredential _firebaseUser = await _auth.signInWithEmailAndPassword(
+            email: oldEmail, password: password);
+
+        await _firebaseUser.user!.updateEmail(user.email);
+        _updateUserFirestore(user, _firebaseUser.user!);
+      } on FirebaseAuthException catch (err) {
+        print('Caught error: ${err.code}');
+        if (err.code == "email-already-in-use") {
           _authUpdateUserNoticeTitle = 'auth.updateUserEmailInUse'.tr;
           _authUpdateUserNotice = 'auth.updateUserEmailInUse'.tr;
         } else {
