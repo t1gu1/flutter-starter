@@ -1,5 +1,24 @@
 # Flutter starter
 
+GetX simplify & optimise a lot how to use Flutter!
+
+You should read a bit about GetX and Firebase.
+
+## Package used
+
+- Firebase (firebase_core, firebase_auth, cloud_firestore)
+- [GetX](https://github.com/jonataslaw/getx)
+- [get_storage](https://github.com/jonataslaw/get_storage)
+- crypto
+- http
+- csv (Use to convert csv of google excel translations)
+
+## External resources
+
+- [Loading Overlay](https://medium.com/@fayaz07/dont-kill-app-s-ui-thread-for-showing-loading-indicators-809e5a992230).
+- [Amateur Coder GetX Videos](https://www.youtube.com/watch?v=CNpXbeI_slw)
+- [Todo GetX example](https://medium.com/@loicgeek/flutter-how-to-create-a-todo-app-using-firebase-firestore-and-firebase-authentication-with-getx-89bdaacc6de6)
+
 ## Commons commands
 
 - `flutter run` will run the app on a device. (It will ask which devices if you got few)
@@ -7,30 +26,6 @@
 - `flutter run -d {device}` will run on the chosen device.
 - `flutter build {web | ios | android}` will build the app for the chosen platform.
 - `flutter run --release` will let you test an optimized build (Like the release).
-
-## Run the web build on a server
-
-A small trick to test rapidly web **build** is to use [http-server](https://www.npmjs.com/package/http-server).
-
-- `npm install --global http-server` or `yarn global add http-server`
-- `cd build/web`
-- `http-server -b -g --proxy http://localhost:8080`
-- Go to <http://localhost:8080>
-
-## Package used
-
-- Firebase (firebase_core, firebase_auth, cloud_firestore)
-- [GetX Documentation](https://github.com/jonataslaw/getx)
-- [GetX storage package get_storage](https://github.com/jonataslaw/get_storage)
-- crypto
-- http
-- csv
-
-## External ressources
-
-- [Loading Overlay](https://medium.com/@fayaz07/dont-kill-app-s-ui-thread-for-showing-loading-indicators-809e5a992230).
-- [Amateur Coder GetX Videos](https://www.youtube.com/watch?v=CNpXbeI_slw)
-- [Todo GetX example](https://medium.com/@loicgeek/flutter-how-to-create-a-todo-app-using-firebase-firestore-and-firebase-authentication-with-getx-89bdaacc6de6)
 
 ## Translations
 
@@ -43,9 +38,9 @@ You can run a commandline app to generate the GetX Localization class which pull
 
 ## Firebase
 
-Make sure you [setup firebase](https://firebase.google.com/docs/flutter/setup?platform=android) with your project
+It's currently link to a test one on mine (To make your test rapidly of that Repo #imSoNice) but if make sure you [setup firebase](https://firebase.google.com/docs/flutter/setup?platform=android) with your project to continue your development.
 
-There should be things to replace:
+There should be things to replace: (When you will setup your proper firebase)
 
 - A file for IOS (`/ios/Runner/GoogleService-Info.plist`)
 - A file for Android (`/android/app/google-services.json`)
@@ -73,6 +68,8 @@ TODO: There is more to add here
 
 ## /constants/
 
+Tips: Try to use & edit app_themes constants as more as you can.
+
 **app_themes.dart** — contains info related to our light and dark themes.
 
 **globals.dart** — contains some global app settings
@@ -80,6 +77,8 @@ TODO: There is more to add here
 **app_routes.dart** — contains the app routes.
 
 ## /controllers/
+
+Tips: The controllers are contains a lot of logic and think it a way to be reusable!
 
 **auth_controller.dart** — our user and authentication functions for creating, logging in and out our user and saving our user data.
 
@@ -89,6 +88,8 @@ TODO: There is more to add here
 
 ## /helpers/
 
+Tips: The google excel way is sooo nice. Use that update_localizations script!
+
 **validator.dart** — contains some validation functions for our form fields.
 
 **update_localizations.dart** — command line dart app that generates the localization.g.dart file.
@@ -97,11 +98,16 @@ TODO: There is more to add here
 
 ## /models/
 
-**user_model.dart** — contains the model for our user saved in firestore.
+**user_model.dart** — contains the model for our user saved in Firestore.
 
 **menu_option_model.dart** — contains our model for our language options and theme options in settings.
 
 ## /screens/
+
+Tips:
+
+- Screens should use components and add max-width, margin & spacing between them.
+- The screens file name should has similar name if not a exact name as the url & className should be like `NameScreen`.
 
 **home.dart** — contains the ui for the home which shows info about the user.
 
@@ -109,7 +115,9 @@ TODO: There is more to add here
 
 **splash.dart** — contains the initial loading screen, currently just a circular progress indicator.
 
-## /screens/auth/
+### /screens/auth/
+
+Tips: If there is a lot of screen that share a common purpose, group them in a folder.
 
 **reset-password.dart** — sends a password reset email to the user.
 
@@ -121,6 +129,11 @@ TODO: There is more to add here
 
 ## /components/
 
+Tips: The components should NOT have a max-width, margin/padding most of the time!
+I mean except for the components with that purpose like the Section.
+
+**section.dart** — Add a padding(left/right) and max-width for a section. Imagine (Layout -> Section -> Content/Components)
+
 **avatar.dart** — displays a user avatar on the home.
 
 **dropdown_picker.dart** — shows a dropdown list.
@@ -131,7 +144,7 @@ TODO: There is more to add here
 
 **form_input_field_with_icon.dart** — handles our form field elements but has an icon too.
 
-**form_vertical_spacing.dart** — just a space in the ui.
+**vertical_spacing.dart** — just a space in the ui.
 
 **label_button.dart** — one type of button in ui.
 
