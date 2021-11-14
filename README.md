@@ -31,10 +31,12 @@ You should read a bit about GetX and Firebase.
 
 ![](https://cdn-images-1.medium.com/max/2000/0*9-A7El_nRDBz-ecK)
 
-You can run a commandline app to generate the GetX Localization class which pulls from a [google sheet](https://docs.google.com/spreadsheets/d/1oS7iJ6ocrZBA53SxRfKF0CG9HAaXeKtzvsTBhgG4Zzk/edit#gid=0)
+You can run a commandline app to generate the GetX Localization class which pulls from a [google sheet](https://docs.google.com/spreadsheets/d/1RXc2VeyhsIeFFx8z-GdfJkAGJgPounL_PixeeKczbTU/edit#gid=0)
 
 - Go to `/helpers/update_localizations.dart`
 - Run with `dart update_localizations.dart`
+
+P.S. If you copy the translation to create your own, be sure to share the excel to everyone who possess the link to make the script able to get translations.
 
 ## Firebase
 
