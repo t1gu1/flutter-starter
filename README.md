@@ -4,6 +4,8 @@ GetX simplify & optimise a lot how to use Flutter!
 
 You should read a bit about GetX and Firebase.
 
+That project is link by default to a personal firebase to make you able to test the project easily without changing anything for a first view!
+
 ## Package used
 
 - Firebase (firebase_core, firebase_auth, cloud_firestore)
