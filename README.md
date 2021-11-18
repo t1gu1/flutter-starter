@@ -33,6 +33,8 @@ That project is link by default to a personal firebase to make you able to test 
 
 ![](https://cdn-images-1.medium.com/max/2000/0*9-A7El_nRDBz-ecK)
 
+**A2** in the `Main (All merge)` tab contain the formula that merges tabs together.
+
 You can run a commandline app to generate the GetX Localization class which pulls from a [google sheet](https://docs.google.com/spreadsheets/d/1RXc2VeyhsIeFFx8z-GdfJkAGJgPounL_PixeeKczbTU/edit#gid=0)
 
 - Go to `/helpers/update_localizations.dart`
