@@ -284,7 +284,7 @@ class Localization extends Translations {
 'auth.signInLabelButton': 'Ter uma conta? Entrar.',
 'auth.resetPasswordNoticeTitle': 'Senha redefinir email enviado',
 'auth.resetPasswordNotice': 'Verifique seu e-mail e siga as instruções para redefinir sua senha.',
-'auth.resetPasswordFailed': 'Falha no email de redefinição de senha',
+'auth.resetPasswordFailed': 'Falha no email da redefinição de senha',
 'auth.signInonResetPasswordLabelButton': 'Entrar',
 'auth.updateUser': 'Atualizar perfil',
 'auth.updateUserSuccessNoticeTitle': 'Usuário atualizado',
