@@ -27,9 +27,11 @@ class ThemeController extends GetxController {
     if (themeString == 'light') {
       _setThemeMode = ThemeMode.light;
     }
+    
     if (themeString == 'dark') {
       _setThemeMode = ThemeMode.dark;
     }
+
     return _setThemeMode;
   }
 
@@ -46,9 +48,11 @@ class ThemeController extends GetxController {
         return true;
       }
     }
+
     if (currentTheme == 'dark') {
       return true;
     }
+
     return false;
   }
 }
