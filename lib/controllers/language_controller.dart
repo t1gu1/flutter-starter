@@ -23,7 +23,7 @@ class LanguageController extends GetxController {
       String _deviceLanguage = ui.window.locale.toString();
       _deviceLanguage =
           _deviceLanguage.substring(0, 2); //only get 1st 2 characters
-      print(ui.window.locale.toString());
+
       updateLanguage(_deviceLanguage);
     }
   }

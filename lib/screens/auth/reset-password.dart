@@ -10,6 +10,7 @@ class ResetPasswordScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(context),
@@ -30,7 +31,7 @@ class ResetPasswordScreen extends StatelessWidget {
                     labelText: 'auth.emailFormField'.tr,
                     validator: Validator().email,
                     keyboardType: TextInputType.emailAddress,
-                    onChanged: (value) => null,
+                    onChanged: (value) => {},
                     onSaved: (value) =>
                         authController.emailController.text = value as String,
                   ),
@@ -67,6 +68,7 @@ class ResetPasswordScreen extends StatelessWidget {
         onPressed: () => Get.offAll(SignInScreen()),
       );
     }
-    return Container(width: 0, height: 0);
+
+    return SizedBox(width: 0, height: 0);
   }
 }

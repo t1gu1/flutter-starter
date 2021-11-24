@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return GetBuilder<AuthController>(
       init: AuthController(),
       builder: (controller) {
-        return controller.firestoreUser.value!.uid == null
+        return controller.firestoreUser.value?.uid == null
             ? Center(
                 child: CircularProgressIndicator(),
               )

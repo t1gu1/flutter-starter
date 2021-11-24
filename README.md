@@ -31,14 +31,14 @@ That project is link by default to a personal firebase to make you able to test 
 
 ## Translations
 
-![](https://cdn-images-1.medium.com/max/2000/0*9-A7El_nRDBz-ecK)
+![Translation google drive file](https://cdn-images-1.medium.com/max/2000/0*9-A7El_nRDBz-ecK)
 
 **A2** in the `Main (All merge)` tab contain the formula that merges tabs together.
 
-You can run a commandline app to generate the GetX Localization class which pulls from a [google sheet](https://docs.google.com/spreadsheets/d/1RXc2VeyhsIeFFx8z-GdfJkAGJgPounL_PixeeKczbTU/edit#gid=0)
+You can run a command line app to generate the GetX Localization class which pulls from a [google sheet](https://docs.google.com/spreadsheets/d/1RXc2VeyhsIeFFx8z-GdfJkAGJgPounL_PixeeKczbTU/edit#gid=0)
 
-- Go to `/helpers/update_localizations.dart`
-- Run with `dart update_localizations.dart`
+- Go to `lib/helpers` folder
+- Run `dart update_localizations.dart`
 
 P.S. If you copy the translation to create your own, be sure to share the excel to everyone who possess the link to make the script able to get translations.
 
@@ -54,13 +54,13 @@ There should be things to replace: (When you will setup your proper firebase)
 
 The rules in Firestore for this project are fairly simple. Here are the rules -created.
 
-![](https://cdn-images-1.medium.com/max/2000/0*_lmwiYDofWZd0Kn0)
+![firestore rules](https://cdn-images-1.medium.com/max/2000/0*_lmwiYDofWZd0Kn0)
 
 - The first rule matches any user in the admin collection and allows you to read that document only. No one is allowed to write to this collection. I manually add my admin users through the firebase console.
 
 - The second rule allows the user to read and write only if the user matches the currently logged in user. So a user can only change information about themselves. Here is how my collections are setup in Firestore.
 
-![](https://cdn-images-1.medium.com/max/2060/0*uFxZGvnPvviMebQ5)
+![firestore admin](https://cdn-images-1.medium.com/max/2060/0*uFxZGvnPvviMebQ5)
 
 ## Themes
 
@@ -94,7 +94,7 @@ Tips: The controllers are contains a lot of logic and think it a way to be reusa
 
 ## /helpers/
 
-Tips: The google excel way is sooo nice. Use that update_localizations script!
+Tips: The google excel way is so nice. Use that update_localizations script!
 
 **validator.dart** — contains some validation functions for our form fields.
 

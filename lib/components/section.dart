@@ -6,9 +6,8 @@ enum SectionType {
   fullWidthWithPadding,
   withPadding,
 }
-
 class Section extends StatelessWidget {
-  Section({required this.type, this.child = null}) {
+  Section({required this.type, this.child}) {
     switch (type) {
       case SectionType.fullWidth:
         break;
@@ -24,8 +23,8 @@ class Section extends StatelessWidget {
 
   final SectionType type;
   final Widget? child;
-  double padding = 0;
-  double maxWidth = double.infinity;
+  static double padding = 0;
+  static double maxWidth = double.infinity;
 
   @override
   Widget build(BuildContext context) {

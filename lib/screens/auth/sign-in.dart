@@ -12,6 +12,7 @@ class SignInScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
@@ -31,7 +32,7 @@ class SignInScreen extends StatelessWidget {
                     labelText: 'auth.emailFormField'.tr,
                     validator: Validator().email,
                     keyboardType: TextInputType.emailAddress,
-                    onChanged: (value) => null,
+                    onChanged: (value) => {},
                     onSaved: (value) =>
                         authController.emailController.text = value!,
                   ),
@@ -42,7 +43,7 @@ class SignInScreen extends StatelessWidget {
                     labelText: 'auth.passwordFormField'.tr,
                     validator: Validator().password,
                     obscureText: true,
-                    onChanged: (value) => null,
+                    onChanged: (value) => {},
                     onSaved: (value) =>
                         authController.passwordController.text = value!,
                     maxLines: 1,

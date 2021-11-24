@@ -47,7 +47,7 @@ class AuthController extends GetxController {
     }
 
     if (_firebaseUser == null) {
-      print('Send to signin');
+      // Send to signin
       Get.offAll(SignInScreen());
     } else {
       Get.offAll(HomeScreen());
@@ -62,8 +62,6 @@ class AuthController extends GetxController {
 
   //Streams the firestore user from the firestore collection
   Stream<UserModel> streamFirestoreUser() {
-    print('streamFirestoreUser()');
-
     return _db
         .doc('/users/${firebaseUser.value!.uid}')
         .snapshots()
@@ -104,8 +102,6 @@ class AuthController extends GetxController {
           .createUserWithEmailAndPassword(
               email: emailController.text, password: passwordController.text)
           .then((result) async {
-        print('uID: ' + result.user!.uid.toString());
-        print('email: ' + result.user!.email.toString());
         //get photo url from gravatar if user has one
         Gravatar gravatar = Gravatar(emailController.text);
         String gravatarUrl = gravatar.imageUrl(
@@ -150,7 +146,6 @@ class AuthController extends GetxController {
         await _firebaseUser.user!.updateEmail(user.email);
         _updateUserFirestore(user, _firebaseUser.user!);
       } on FirebaseAuthException catch (err) {
-        print('Caught error: ${err.code}');
         if (err.code == "email-already-in-use") {
           _authUpdateUserNoticeTitle = 'auth.updateUserEmailInUse'.tr;
           _authUpdateUserNotice = 'auth.updateUserEmailInUse'.tr;
@@ -169,7 +164,7 @@ class AuthController extends GetxController {
       //List<String> errors = error.toString().split(',');
       // print("Error: " + errors[1]);
       hideLoadingIndicator();
-      print(error.code);
+
       String authError;
       switch (error.code) {
         case 'ERROR_WRONG_PASSWORD':

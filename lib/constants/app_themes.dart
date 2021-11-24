@@ -41,13 +41,13 @@ class AppThemes {
   static const Color _lightBackgroundSecondaryColor = white;
   static const Color _lightBackgroundAlertColor = blackPearl;
   static const Color _lightBackgroundActionTextColor = white;
-  static const Color _lightBackgroundErrorColor = brinkPink;
-  static const Color _lightBackgroundSuccessColor = juneBud;
+  // static const Color _lightBackgroundErrorColor = brinkPink;
+  // static const Color _lightBackgroundSuccessColor = juneBud;
 
   //Text Colors
   static const Color _lightTextColor = Colors.black;
-  static const Color _lightAlertTextColor = Colors.black;
-  static const Color _lightTextSecondaryColor = Colors.black;
+  // static const Color _lightAlertTextColor = Colors.black;
+  // static const Color _lightTextSecondaryColor = Colors.black;
 
   //Border Color
   static const Color _lightBorderColor = nevada;
@@ -56,7 +56,7 @@ class AppThemes {
   static const Color _lightIconColor = nevada;
 
   //form input colors
-  static const Color _lightInputFillColor = _lightBackgroundSecondaryColor;
+  // static const Color _lightInputFillColor = _lightBackgroundSecondaryColor;
   static const Color _lightBorderActiveColor = _lightPrimaryColor;
   static const Color _lightBorderErrorColor = brinkPink;
 
@@ -71,15 +71,15 @@ class AppThemes {
   static const Color _darkBackgroundAlertColor = blackPearl;
   static const Color _darkBackgroundActionTextColor = white;
 
-  static const Color _darkBackgroundErrorColor =
-      Color.fromRGBO(255, 97, 136, 1);
-  static const Color _darkBackgroundSuccessColor =
-      Color.fromRGBO(186, 215, 97, 1);
+  // static const Color _darkBackgroundErrorColor =
+  //     Color.fromRGBO(255, 97, 136, 1);
+  // static const Color _darkBackgroundSuccessColor =
+  //     Color.fromRGBO(186, 215, 97, 1);
 
   //Text Colors
   static const Color _darkTextColor = white;
-  static const Color _darkAlertTextColor = white;
-  static const Color _darkTextSecondaryColor = white;
+  // static const Color _darkAlertTextColor = white;
+  // static const Color _darkTextSecondaryColor = white;
 
   //Border Color
   static const Color _darkBorderColor = nevada;
@@ -200,7 +200,6 @@ class AppThemes {
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     //primarySwatch: _darkPrimaryColor, //cant be Color on MaterialColor so it can compute different shades.
-    accentColor: _darkPrimaryColor, //prefix icon color form input on focus
 
     fontFamily: font1,
     scaffoldBackgroundColor: _darkBackgroundColor,
@@ -215,8 +214,7 @@ class AppThemes {
     colorScheme: ColorScheme.dark(
       primary: white,
       primaryVariant: _darkBackgroundColor,
-
-      // secondary: _darkSecondaryColor,
+      secondary: _darkPrimaryColor,
     ),
     snackBarTheme: SnackBarThemeData(
         contentTextStyle: TextStyle(color: Colors.white),

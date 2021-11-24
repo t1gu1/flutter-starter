@@ -1,7 +1,7 @@
 import 'package:flutter_starter/models/index.dart';
 
 class Globals {
-  static final String defaultLanguage = 'en';
+  static const String defaultLanguage = 'en';
 //List of languages that are supported.  Used in selector.
 //Follow this plugin for translating a google sheet to languages
 //https://github.com/aloisdeniel/flutter_sheet_localization

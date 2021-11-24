@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
         child: GetMaterialApp(
           translations: Localization(),
           locale: languageController.getLocale, // <- Current locale
-          navigatorObservers: [
-            // FirebaseAnalyticsObserver(analytics: FirebaseAnalytics()),
-          ],
+          // navigatorObservers: [
+          //   // FirebaseAnalyticsObserver(analytics: FirebaseAnalytics()),
+          // ],
           debugShowCheckedModeBanner: false,
           defaultTransition: Transition.fade,
           theme: AppThemes.lightTheme,

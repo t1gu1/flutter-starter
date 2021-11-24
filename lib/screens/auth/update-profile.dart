@@ -11,6 +11,7 @@ class UpdateProfileScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  @override
   Widget build(BuildContext context) {
     //print('user.name: ' + user?.value?.name);
     authController.nameController.text =
@@ -36,7 +37,7 @@ class UpdateProfileScreen extends StatelessWidget {
                     iconPrefix: Icons.person,
                     labelText: 'auth.nameFormField'.tr,
                     validator: Validator().name,
-                    onChanged: (value) => null,
+                    onChanged: (value) => {},
                     onSaved: (value) =>
                         authController.nameController.text = value!,
                   ),
@@ -47,7 +48,7 @@ class UpdateProfileScreen extends StatelessWidget {
                     labelText: 'auth.emailFormField'.tr,
                     validator: Validator().email,
                     keyboardType: TextInputType.emailAddress,
-                    onChanged: (value) => null,
+                    onChanged: (value) => {},
                     onSaved: (value) =>
                         authController.emailController.text = value!,
                   ),
@@ -85,7 +86,7 @@ class UpdateProfileScreen extends StatelessWidget {
   Future<void> _updateUserConfirm(
       BuildContext context, UserModel updatedUser, String oldEmail) async {
     final AuthController authController = AuthController.to;
-    final TextEditingController _password = new TextEditingController();
+    final TextEditingController _password = TextEditingController();
     return Get.dialog(
       AlertDialog(
         shape: RoundedRectangleBorder(
@@ -106,19 +107,19 @@ class UpdateProfileScreen extends StatelessWidget {
               return null;
           },
           obscureText: true,
-          onChanged: (value) => null,
+          onChanged: (value) => {},
           onSaved: (value) => _password.text = value!,
           maxLines: 1,
         ),
         actions: <Widget>[
-          new TextButton(
-            child: new Text('auth.cancel'.tr.toUpperCase()),
+          TextButton(
+            child: Text('auth.cancel'.tr.toUpperCase()),
             onPressed: () {
               Get.back();
             },
           ),
-          new TextButton(
-            child: new Text('auth.submit'.tr.toUpperCase()),
+          TextButton(
+            child: Text('auth.submit'.tr.toUpperCase()),
             onPressed: () async {
               Get.back();
               await authController.updateUser(
