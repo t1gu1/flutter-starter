@@ -137,6 +137,7 @@ class AuthController extends GetxController {
       String password) async {
     String _authUpdateUserNoticeTitle = 'auth.updateUserSuccessNoticeTitle'.tr;
     String _authUpdateUserNotice = 'auth.updateUserSuccessNotice'.tr;
+
     try {
       showLoadingIndicator();
       try {
@@ -184,14 +185,16 @@ class AuthController extends GetxController {
 
   //updates the firestore user in users collection
   void _updateUserFirestore(UserModel user, User _firebaseUser) {
-    _db.doc('/users/${_firebaseUser.uid}').update(user.toJson());
-    update();
+    _db.doc('/users/${_firebaseUser.uid}').update(user.toJson()).then((res) {
+      update();
+    });
   }
 
   //create the firestore user in users collection
   void _createUserFirestore(UserModel user, User _firebaseUser) {
-    _db.doc('/users/${_firebaseUser.uid}').set(user.toJson());
-    update();
+    _db.doc('/users/${_firebaseUser.uid}').set(user.toJson()).then((res) {
+      update();
+    });
   }
 
   //password reset email

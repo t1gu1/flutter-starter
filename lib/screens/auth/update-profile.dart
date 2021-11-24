@@ -59,12 +59,14 @@ class UpdateProfileScreen extends StatelessWidget {
                         if (_formKey.currentState!.validate()) {
                           SystemChannels.textInput
                               .invokeMethod('TextInput.hide');
+
                           UserModel _updatedUser = UserModel(
                               uid: authController.firestoreUser.value!.uid,
                               name: authController.nameController.text,
                               email: authController.emailController.text,
                               photoUrl:
                                   authController.firestoreUser.value!.photoUrl);
+
                           _updateUserConfirm(context, _updatedUser,
                               authController.firestoreUser.value!.email);
                         }
@@ -87,6 +89,7 @@ class UpdateProfileScreen extends StatelessWidget {
       BuildContext context, UserModel updatedUser, String oldEmail) async {
     final AuthController authController = AuthController.to;
     final TextEditingController _password = TextEditingController();
+
     return Get.dialog(
       AlertDialog(
         shape: RoundedRectangleBorder(
