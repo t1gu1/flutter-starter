@@ -124,9 +124,9 @@ class UpdateProfileScreen extends StatelessWidget {
           TextButton(
             child: Text('auth.submit'.tr.toUpperCase()),
             onPressed: () async {
-              Get.back();
               await authController.updateUser(
                   context, updatedUser, oldEmail, _password.text);
+              Get.back(closeOverlays: true);
             },
           )
         ],
