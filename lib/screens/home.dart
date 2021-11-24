@@ -39,6 +39,7 @@ class HomeScreen extends StatelessWidget {
                             VerticalSpace(),
                             ...[
                               "${'home.uidLabel'.tr}: ${controller.firestoreUser.value!.uid}",
+                              // TODO: BUG: The name dont change after updating profile. Seems to be a tick late.
                               "${'home.nameLabel'.tr}: ${controller.firestoreUser.value!.name}",
                               "${'home.emailLabel'.tr}: ${controller.firestoreUser.value!.email}",
                               "${'home.adminUserLabel'.tr}: ${controller.admin.value.toString()}",
