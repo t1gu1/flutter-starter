@@ -9,9 +9,9 @@ void main() {
 }
 
 Future updateLocalizationFile() async {
-  //the document id for your google sheet
+  // The document id for your google sheet
   String documentId = "1RXc2VeyhsIeFFx8z-GdfJkAGJgPounL_PixeeKczbTU";
-  //the sheetid of your google sheet
+  // The sheetid of your google sheet
   String sheetId = "0";
 
   String _phraseKey = '';
@@ -115,7 +115,7 @@ class Localization extends Translations {
     await file.writeAsString(_localizationFile);
     stdout.writeln('Done...');
   } catch (e) {
-    //output error
+    // Output error
     stderr.writeln('error: networking error');
     stderr.writeln(e.toString());
   }
@@ -126,7 +126,7 @@ String _uniformizeKey(String key) {
   return key;
 }
 
-//Localization Model
+// Localization Model
 class LocalizationModel {
   final String language;
   final List<PhraseModel> phrases;

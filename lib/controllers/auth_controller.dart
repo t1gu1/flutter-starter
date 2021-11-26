@@ -23,7 +23,7 @@ class AuthController extends GetxController {
 
   @override
   void onReady() async {
-    //run every time auth state changes
+    // run every time auth state changes
     ever(firebaseUser, handleAuthChanged);
 
     firebaseUser.bindStream(user);
@@ -40,7 +40,7 @@ class AuthController extends GetxController {
   }
 
   handleAuthChanged(_firebaseUser) async {
-    //get user data from firestore
+    // get user data from firestore
     if (_firebaseUser?.uid != null) {
       firestoreUser.bindStream(streamFirestoreUser());
       await isAdmin();
@@ -60,7 +60,7 @@ class AuthController extends GetxController {
   // Firebase user a realtime stream
   Stream<User?> get user => _auth.authStateChanges();
 
-  //Streams the firestore user from the firestore collection
+  // Streams the firestore user from the firestore collection
   Stream<UserModel> streamFirestoreUser() {
     return _db
         .doc('/users/${firebaseUser.value!.uid}')
@@ -68,13 +68,13 @@ class AuthController extends GetxController {
         .map((snapshot) => UserModel.fromMap(snapshot.data()!));
   }
 
-  //get the firestore user from the firestore collection
+  // Get the firestore user from the firestore collection
   Future<UserModel> getFirestoreUser() {
     return _db.doc('/users/${firebaseUser.value!.uid}').get().then(
         (documentSnapshot) => UserModel.fromMap(documentSnapshot.data()!));
   }
 
-  //Method to handle user sign in using email and password
+  // Method to handle user sign in using email and password
   signInWithEmailAndPassword(BuildContext context) async {
     showLoadingIndicator();
     try {
@@ -102,7 +102,7 @@ class AuthController extends GetxController {
           .createUserWithEmailAndPassword(
               email: emailController.text, password: passwordController.text)
           .then((result) async {
-        //get photo url from gravatar if user has one
+        // Get photo url from gravatar if user has one
         Gravatar gravatar = Gravatar(emailController.text);
         String gravatarUrl = gravatar.imageUrl(
           size: 200,
@@ -110,7 +110,7 @@ class AuthController extends GetxController {
           rating: GravatarRating.pg,
           fileExtension: true,
         );
-        //create the new user object
+        // Create the new user object
         UserModel _newUser = UserModel(
             uid: result.user!.uid,
             email: result.user!.email!,
@@ -132,7 +132,7 @@ class AuthController extends GetxController {
     }
   }
 
-  //handles updating the user when updating profile
+  // Handles updating the user when updating profile
   Future<void> updateUser(BuildContext context, UserModel user, String oldEmail,
       String password) async {
     String _authUpdateUserNoticeTitle = 'auth.updateUserSuccessNoticeTitle'.tr;
@@ -162,7 +162,7 @@ class AuthController extends GetxController {
           backgroundColor: Get.theme.snackBarTheme.backgroundColor,
           colorText: Get.theme.snackBarTheme.actionTextColor);
     } on PlatformException catch (error) {
-      //List<String> errors = error.toString().split(',');
+      // List<String> errors = error.toString().split(',');
       // print("Error: " + errors[1]);
       hideLoadingIndicator();
 
@@ -183,21 +183,21 @@ class AuthController extends GetxController {
     }
   }
 
-  //updates the firestore user in users collection
+  // Updates the firestore user in users collection
   void _updateUserFirestore(UserModel user, User _firebaseUser) {
     _db.doc('/users/${_firebaseUser.uid}').update(user.toJson()).then((res) {
       update();
     });
   }
 
-  //create the firestore user in users collection
+  // Create the firestore user in users collection
   void _createUserFirestore(UserModel user, User _firebaseUser) {
     _db.doc('/users/${_firebaseUser.uid}').set(user.toJson()).then((res) {
       update();
     });
   }
 
-  //password reset email
+  // Password reset email
   Future<void> sendPasswordResetEmail(BuildContext context) async {
     showLoadingIndicator();
     try {
@@ -219,7 +219,7 @@ class AuthController extends GetxController {
     }
   }
 
-  //check if user is an admin user
+  // Check if user is an admin user
   isAdmin() async {
     await getUser.then((user) async {
       DocumentSnapshot adminRef =

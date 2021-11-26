@@ -13,7 +13,7 @@ class LanguageController extends GetxController {
 
   @override
   void onReady() async {
-    //setInitialLocalLanguage();
+    // SetInitialLocalLanguage();
     super.onInit();
   }
 
@@ -22,32 +22,32 @@ class LanguageController extends GetxController {
     if (currentLanguageStore.value == '') {
       String _deviceLanguage = ui.window.locale.toString();
       _deviceLanguage =
-          _deviceLanguage.substring(0, 2); //only get 1st 2 characters
+          _deviceLanguage.substring(0, 2); // Only get 1st 2 characters
 
       updateLanguage(_deviceLanguage);
     }
   }
 
-// Gets current language stored
+  // Gets current language stored
   RxString get currentLanguageStore {
     language.value = store.read('language') ?? '';
     return language;
   }
 
-  // gets the language locale app is set to
+  // Gets the language locale app is set to
   Locale? get getLocale {
     if (currentLanguageStore.value == '') {
       language.value = Globals.defaultLanguage;
       updateLanguage(Globals.defaultLanguage);
     } else if (currentLanguageStore.value != '') {
-      //set the stored string country code to the locale
+      // Set the stored string country code to the locale
       return Locale(currentLanguageStore.value);
     }
-    // gets the default language key for the system.
+    // Gets the default language key for the system.
     return Get.deviceLocale;
   }
 
-// updates the language stored
+  // Updates the language stored
   Future<void> updateLanguage(String value) async {
     language.value = value;
     await store.write('language', value);

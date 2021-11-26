@@ -1,4 +1,4 @@
-// matching various patterns for kinds of data
+// Matching various patterns for kinds of data
 import 'package:get/get.dart';
 
 class Validator {

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 // https://gist.github.com/RodBr/37310335c6639f486bb3c8a628052405
-//https://medium.com/swlh/flutter-dynamic-themes-in-3-lines-c3b375f292e3
+// https://medium.com/swlh/flutter-dynamic-themes-in-3-lines-c3b375f292e3
 
 class ThemeController extends GetxController {
   static ThemeController get to => Get.find();
@@ -27,7 +27,7 @@ class ThemeController extends GetxController {
     if (themeString == 'light') {
       _setThemeMode = ThemeMode.light;
     }
-    
+
     if (themeString == 'dark') {
       _setThemeMode = ThemeMode.dark;
     }
@@ -40,7 +40,7 @@ class ThemeController extends GetxController {
     setThemeMode(_themeString);
   }
 
-  // checks whether darkmode is set via system or previously by user
+  // Checks whether darkmode is set via system or previously by user
   bool get isDarkModeOn {
     if (currentTheme == 'system') {
       if (WidgetsBinding.instance!.window.platformBrightness ==

@@ -23,6 +23,7 @@ That project is link by default to a personal firebase to make you able to test 
 
 ## Commons commands
 
+- `flutter pub get` will install required packages
 - `flutter run` will run the app on a device. (It will ask which devices if you got few)
 - `flutter devices` will show you your devices list.
 - `flutter run -d {device}` will run on the chosen device.

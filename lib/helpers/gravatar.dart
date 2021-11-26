@@ -1,12 +1,12 @@
-//code from uses wrong version of crypto
-//to use default package https://github.com/subosito/simple_gravatar/blob/master/lib/simple_gravatar.dart
+// Code from uses wrong version of crypto
+// To use default package https://github.com/subosito/simple_gravatar/blob/master/lib/simple_gravatar.dart
 
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
 enum GravatarImage {
   nf, // 404
-  mp, // mystery person
+  mp, // Mystery person
   identicon,
   monsterid,
   wavatar,
@@ -48,7 +48,7 @@ class Gravatar {
     if (forceDefault) query['f'] = 'y';
     if (rating != null) query['r'] = _ratingString(rating);
     if (fileExtension) hashDigest += '.png';
-    //if (query.isEmpty) query = null;
+    // If (query.isEmpty) query = null;
 
     return Uri.https('www.gravatar.com', '/avatar/$hashDigest', query)
         .toString();
