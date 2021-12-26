@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_starter/layouts/defaultLayout.dart';
 import 'package:flutter_starter/screens/auth/index.dart';
 import 'package:get/get.dart';
 import 'package:flutter_starter/components/segmented_selector.dart';
@@ -14,11 +15,10 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('settings.title'.tr),
-      ),
-      body: _buildLayoutSection(context),
+    return DefaultLayout(
+      title: Text('settings.title'.tr),
+      displayBack: true,
+      child: (controller) => _buildLayoutSection(context),
     );
   }
 
