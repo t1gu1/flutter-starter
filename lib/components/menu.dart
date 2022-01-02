@@ -12,22 +12,38 @@ class Menu extends StatelessWidget {
         // Remove padding
         padding: EdgeInsets.zero,
         children: [
-          UserAccountsDrawerHeader(
-            accountName: Text(AuthController.to.firestoreUser.value!.name),
-            accountEmail: Text(AuthController.to.firestoreUser.value!.email),
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.network(
-                  AuthController.to.firestoreUser.value!.photoUrl,
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
+          Stack(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text(AuthController.to.firestoreUser.value!.name),
+                accountEmail:
+                    Text(AuthController.to.firestoreUser.value!.email),
+                currentAccountPicture: CircleAvatar(
+                  child: ClipOval(
+                    child: Image.network(
+                      AuthController.to.firestoreUser.value!.photoUrl,
+                      fit: BoxFit.cover,
+                      width: 90,
+                      height: 90,
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                  color: TinyColor(Theme.of(context).primaryColor)
+                      .darken(10)
+                      .color,
                 ),
               ),
-            ),
-            decoration: BoxDecoration(
-              color: TinyColor(Theme.of(context).primaryColor).darken(10).color,
-            ),
+              Positioned(
+                right: 8.0,
+                top: 8.0,
+                child: IconButton(
+                  icon: Icon(Icons.close),
+                  color: Colors.white,
+                  onPressed: () => Navigator.pop(context, false),
+                ),
+              ),
+            ],
           ),
           ListTile(
             leading: Icon(Icons.settings),
