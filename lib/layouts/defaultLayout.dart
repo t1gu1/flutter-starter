@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/components/menu.dart';
 import 'package:flutter_starter/controllers/index.dart';
@@ -12,6 +13,12 @@ class DefaultLayout extends StatelessWidget {
       this.displayMenu = false,
       this.displayBack = false,
       this.leadingWidth = 0}) {
+    // Always hide back button in web to use the browser one
+    if (kIsWeb) {
+      displayBack = false;
+    }
+
+    // Calculate the leadingWidth necessary to display all buttons
     leadingWidth = displayBack && displayMenu
         ? 80
         : !displayBack && !displayMenu
@@ -23,8 +30,8 @@ class DefaultLayout extends StatelessWidget {
   final dynamic child;
   final dynamic title;
   final bool displayMenu;
-  final bool displayBack;
 
+  bool displayBack;
   double leadingWidth;
 
   @override
