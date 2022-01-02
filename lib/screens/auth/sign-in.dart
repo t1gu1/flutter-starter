@@ -11,6 +11,12 @@ class SignInScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  void onSubmit(context) async {
+    if (_formKey.currentState!.validate()) {
+      authController.signInWithEmailAndPassword(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +40,7 @@ class SignInScreen extends StatelessWidget {
                     onChanged: (value) => {},
                     onSaved: (value) =>
                         authController.emailController.text = value!,
+                    onFieldSubmitted: (value) => onSubmit(context),
                   ),
                   VerticalSpace(),
                   FormInputFieldWithIcon(
@@ -46,14 +53,13 @@ class SignInScreen extends StatelessWidget {
                     onSaved: (value) =>
                         authController.passwordController.text = value!,
                     maxLines: 1,
+                    onFieldSubmitted: (value) => onSubmit(context),
                   ),
                   VerticalSpace(),
                   PrimaryButton(
                       labelText: 'auth.signInButton'.tr,
-                      onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
-                          authController.signInWithEmailAndPassword(context);
-                        }
+                      onPressed: () {
+                        onSubmit(context);
                       }),
                   VerticalSpace(),
                   LabelButton(

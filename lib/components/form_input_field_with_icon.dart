@@ -12,6 +12,7 @@ class FormInputFieldWithIcon extends StatelessWidget {
       this.minLines = 1,
       this.maxWidth = AppThemes.inputWidth,
       this.maxLines,
+      this.onFieldSubmitted,
       required this.onChanged,
       required this.onSaved});
 
@@ -26,6 +27,7 @@ class FormInputFieldWithIcon extends StatelessWidget {
   final double maxWidth;
   final void Function(String) onChanged;
   final void Function(String?)? onSaved;
+  final void Function(String?)? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,7 @@ class FormInputFieldWithIcon extends StatelessWidget {
           maxLines: maxLines,
           minLines: minLines,
           validator: validator,
+          onFieldSubmitted: onFieldSubmitted,
         ));
   }
 }
