@@ -7,11 +7,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-        title: Text('home.title'.tr),
         displayMenu: true,
-        child: (controller) => Section(
-              type: SectionType.fullWidthWithPadding,
-              child: Center(
+        children: (controller) => [
+              Image.network(
+                  'https://th.bing.com/th/id/R.307c5b29d72d59a1d1d8926685451e67?rik=rSywjZobiTg6Bw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fRsyHRBx.jpg&ehk=8NDBntKhuI6r6Yl7lmKECZZdrLVJ4EfrAYC6Cd5ZJqU%3d&risl=&pid=ImgRaw&r=0',
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                  height: 300),
+              Center(
                 child: Column(
                   children: <Widget>[
                     SizedBox(height: 120),
@@ -34,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-            ));
+              )
+            ]);
   }
 }
