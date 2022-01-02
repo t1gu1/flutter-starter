@@ -105,6 +105,7 @@ class AppThemes {
 
   //the light theme
   static final ThemeData lightTheme = ThemeData(
+    primaryColor: _lightPrimaryColor,
     brightness: Brightness.light,
     fontFamily: font1,
     scaffoldBackgroundColor: _lightBackgroundColor,
@@ -114,7 +115,7 @@ class AppThemes {
     appBarTheme: AppBarTheme(
       color: _lightBackgroundAppBarColor,
       iconTheme: IconThemeData(color: white),
-      titleTextStyle: TextStyle(color: _lightTextColor),
+      titleTextStyle: TextStyle(color: Colors.white),
       toolbarTextStyle: TextStyle(color: _lightTextColor),
     ),
     colorScheme: ColorScheme.light(
@@ -133,6 +134,7 @@ class AppThemes {
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             primary: _lightPrimaryColor,
+            onPrimary: white,
             textStyle: TextStyle(
               color: Colors.white,
             ))),
@@ -199,6 +201,7 @@ class AppThemes {
 
   //the dark theme
   static final ThemeData darkTheme = ThemeData(
+    primaryColor: _darkPrimaryColor,
     brightness: Brightness.dark,
     //primarySwatch: _darkPrimaryColor, //cant be Color on MaterialColor so it can compute different shades.
 
@@ -243,6 +246,7 @@ class AppThemes {
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             primary: _darkPrimaryColor,
+            onPrimary: white,
             textStyle: TextStyle(
               color: Colors.white,
             ))),

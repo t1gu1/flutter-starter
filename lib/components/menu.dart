@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/controllers/index.dart';
 import 'package:flutter_starter/screens/settings.dart';
 import 'package:get/get.dart';
+import 'package:tinycolor2/tinycolor2.dart';
 
 class Menu extends StatelessWidget {
   @override
@@ -12,12 +13,12 @@ class Menu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Oflutter.com'),
-            accountEmail: Text('example@gmail.com'),
+            accountName: Text(AuthController.to.firestoreUser.value!.name),
+            accountEmail: Text(AuthController.to.firestoreUser.value!.email),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
-                  'https://pbs.twimg.com/media/DUfDNvTVQAA2osS.jpg:large',
+                  AuthController.to.firestoreUser.value!.photoUrl,
                   fit: BoxFit.cover,
                   width: 90,
                   height: 90,
@@ -25,11 +26,7 @@ class Menu extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.black54,
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(
-                      'https://th.bing.com/th/id/R.307c5b29d72d59a1d1d8926685451e67?rik=rSywjZobiTg6Bw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fRsyHRBx.jpg&ehk=8NDBntKhuI6r6Yl7lmKECZZdrLVJ4EfrAYC6Cd5ZJqU%3d&risl=&pid=ImgRaw&r=0')),
+              color: TinyColor(Theme.of(context).primaryColor).darken(10).color,
             ),
           ),
           ListTile(
