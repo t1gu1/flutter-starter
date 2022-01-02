@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/controllers/index.dart';
+import 'package:flutter_starter/screens/settings.dart';
+import 'package:get/get.dart';
 
 class Menu extends StatelessWidget {
   @override
@@ -30,40 +33,15 @@ class Menu extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Friends'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.share),
-            title: Text('Share'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Request'),
-          ),
-          Divider(),
-          ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.description),
-            title: Text('Policies'),
-            onTap: () => {},
+            onTap: () => {Get.to(SettingsScreen())},
           ),
           Divider(),
           ListTile(
-            title: Text('Exit'),
+            title: Text('settings.signOut'.tr),
             leading: Icon(Icons.exit_to_app),
-            onTap: () => {},
+            onTap: () => {AuthController.to.signOut()},
           ),
         ],
       ),
