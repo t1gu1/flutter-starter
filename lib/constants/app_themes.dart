@@ -114,7 +114,8 @@ class AppThemes {
     appBarTheme: AppBarTheme(
       color: _lightBackgroundAppBarColor,
       iconTheme: IconThemeData(color: white),
-      textTheme: _lightTextTheme,
+      titleTextStyle: TextStyle(color: _lightTextColor),
+      toolbarTextStyle: TextStyle(color: _lightTextColor),
     ),
     colorScheme: ColorScheme.light(
       primary: _lightPrimaryColor,
@@ -209,7 +210,8 @@ class AppThemes {
     appBarTheme: AppBarTheme(
       color: _darkBackgroundAppBarColor,
       iconTheme: IconThemeData(color: _darkTextColor),
-      textTheme: _darkTextTheme,
+      titleTextStyle: TextStyle(color: _darkTextColor),
+      toolbarTextStyle: TextStyle(color: _darkTextColor),
     ),
     colorScheme: ColorScheme.dark(
       primary: white,

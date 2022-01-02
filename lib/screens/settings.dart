@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_starter/layouts/defaultLayout.dart';
 import 'package:flutter_starter/screens/auth/index.dart';
 import 'package:get/get.dart';

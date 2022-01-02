@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter_starter/screens/auth/index.dart';
 import 'package:flutter_starter/components/index.dart';

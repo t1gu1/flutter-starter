@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/components/menu.dart';
-import 'package:flutter_starter/controllers/index.dart';
 import 'package:flutter_starter/components/index.dart';
 import 'package:flutter_starter/layouts/defaultLayout.dart';
-import 'package:flutter_starter/screens/index.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {

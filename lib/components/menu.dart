@@ -32,17 +32,17 @@ class Menu extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text('Favorites'),
-            onTap: () => null,
+            onTap: () => {},
           ),
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Friends'),
-            onTap: () => null,
+            onTap: () => {},
           ),
           ListTile(
             leading: Icon(Icons.share),
             title: Text('Share'),
-            onTap: () => null,
+            onTap: () => {},
           ),
           ListTile(
             leading: Icon(Icons.notifications),
@@ -52,18 +52,18 @@ class Menu extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => null,
+            onTap: () => {},
           ),
           ListTile(
             leading: Icon(Icons.description),
             title: Text('Policies'),
-            onTap: () => null,
+            onTap: () => {},
           ),
           Divider(),
           ListTile(
             title: Text('Exit'),
             leading: Icon(Icons.exit_to_app),
-            onTap: () => null,
+            onTap: () => {},
           ),
         ],
       ),

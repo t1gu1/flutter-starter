@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/components/menu.dart';
 import 'package:flutter_starter/controllers/index.dart';
-import 'package:flutter_starter/components/index.dart';
 import 'package:flutter_starter/screens/index.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class DefaultLayout extends StatelessWidget {
   DefaultLayout(
       {this.child,
